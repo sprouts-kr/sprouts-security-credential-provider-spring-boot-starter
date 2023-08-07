@@ -1,5 +1,5 @@
 variables:
-  MAVEN_IMAGE: registry.gitlab.sprouts.kr/sandbox/sandbox-maven-git:latest
+  MAVEN_IMAGE: registry.nexus.sprouts.kr/maven:3.8.6-openjdk-11-slim
 
 include:
   - project: "sprouts/library/gitlab-ci"
