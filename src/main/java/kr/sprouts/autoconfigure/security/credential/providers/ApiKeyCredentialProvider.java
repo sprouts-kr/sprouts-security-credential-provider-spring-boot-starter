@@ -43,14 +43,6 @@ public class ApiKeyCredentialProvider implements CredentialProvider<ApiKeySubjec
         );
     }
 
-    public static ApiKeyCredentialProvider fromCredentialProvider(CredentialProvider<?> credentialProvider) {
-        if (credentialProvider instanceof ApiKeyCredentialProvider) {
-            return (ApiKeyCredentialProvider) credentialProvider;
-        }
-
-        throw new RuntimeException();
-    }
-
     @Override
     public UUID getId() {
         return id;
