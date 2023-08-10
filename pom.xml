@@ -47,6 +47,13 @@
 			<version>${log4j2.version}</version>
 		</dependency>
 
+		<!-- sprouts.kr -->
+		<dependency>
+			<groupId>kr.sprouts.security.credential</groupId>
+			<artifactId>sprouts-security-credential</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
 		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
