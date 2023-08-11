@@ -1,5 +1,6 @@
 package kr.sprouts.autoconfigure.security.credential.providers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.sprouts.security.credential.Credential;
 import kr.sprouts.security.credential.CredentialProvider;
@@ -61,7 +62,7 @@ public class ApiKeyCredentialProvider implements CredentialProvider<ApiKeySubjec
                     targetConsumerIds,
                     codec.encodeToString(cipher.encrypt(objectMapper.writeValueAsString(Principal.of(id, targetConsumerIds, subject)), encryptSecret))
             );
-        } catch (Throwable e) {
+        } catch (JsonProcessingException e) {
             throw new ApiKeyCredentialProvideException(e);
         }
     }
