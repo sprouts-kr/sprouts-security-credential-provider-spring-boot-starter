@@ -53,7 +53,4 @@ public class CredentialProviderManager {
     public Optional<CredentialProvider<?>> get(UUID providerId) {
          return Optional.of(credentialProviders.get(providerId));
     }
-
-    private static class InitializeCredentialProviderException extends RuntimeException { }
-    private static class UnsupportedCredentialProviderException extends RuntimeException { }
 }
