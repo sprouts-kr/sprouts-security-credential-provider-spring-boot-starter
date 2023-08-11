@@ -70,7 +70,7 @@ class CredentialProviderConfigurationTest {
                             .findFirst()
                             .orElseThrow();
 
-                    assertEquals(providerSpec.getId(), "98c73526-7b15-4e0c-aacd-a47816efaedc");
+                    assertEquals("98c73526-7b15-4e0c-aacd-a47816efaedc", providerSpec.getId());
                 }
         );
     }

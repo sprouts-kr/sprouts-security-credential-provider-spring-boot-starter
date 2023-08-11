@@ -66,7 +66,7 @@ public class BearerTokenCredentialProvider implements CredentialProvider<BearerT
                     targetConsumerIds,
                     jwt.createClaimsJws(claims(Principal.of(id, targetConsumerIds, subject)), encryptSecret)
             );
-        } catch (Throwable e) {
+        } catch (JsonProcessingException e) {
             throw new BearerTokenCredentialProvideException(e);
         }
     }
