@@ -84,10 +84,4 @@ public class BearerTokenCredentialProvider implements CredentialProvider<BearerT
 
         return claims;
     }
-
-    private static class BearerTokenCredentialProvideException extends RuntimeException {
-        BearerTokenCredentialProvideException(Throwable cause) {
-            super(cause);
-        }
-    }
 }

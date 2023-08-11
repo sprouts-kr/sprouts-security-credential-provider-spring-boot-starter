@@ -66,10 +66,4 @@ public class ApiKeyCredentialProvider implements CredentialProvider<ApiKeySubjec
             throw new ApiKeyCredentialProvideException(e);
         }
     }
-
-    private static class ApiKeyCredentialProvideException extends RuntimeException {
-        ApiKeyCredentialProvideException(Throwable cause) {
-            super(cause);
-        }
-    }
 }
