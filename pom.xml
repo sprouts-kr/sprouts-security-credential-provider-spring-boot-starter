@@ -17,14 +17,14 @@
 		<sonar.qualitygate.wait>true</sonar.qualitygate.wait>
 	</properties>
 	<repositories>
-		<!-- nexus3 maven public -->
+		<!-- personal repository -->
 		<repository>
 			<id>nexus3-maven-public</id>
 			<url>https://nexus.sprouts.kr/repository/maven/</url>
 		</repository>
 	</repositories>
 	<dependencies>
-		<!-- Auto Configuration -->
+		<!-- auto configuration -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-autoconfigure</artifactId>
@@ -35,7 +35,7 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- Logging -->
+		<!-- logging -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
@@ -47,7 +47,14 @@
 			<version>${log4j2.version}</version>
 		</dependency>
 
-		<!-- Lombok -->
+		<!-- sprouts.kr -->
+		<dependency>
+			<groupId>kr.sprouts.security.credential</groupId>
+			<artifactId>sprouts-security-credential</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
+		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -55,7 +62,7 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- Test -->
+		<!-- test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

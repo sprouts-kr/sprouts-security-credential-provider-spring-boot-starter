@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    kr.sprouts.autoconfigure.configurations.TemplateConfiguration\
+    kr.sprouts.autoconfigure.security.credential.configurations.CredentialProviderConfiguration\
