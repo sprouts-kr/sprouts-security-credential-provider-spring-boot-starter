@@ -32,7 +32,7 @@ public class ApiKeyCredentialProvider implements CredentialProvider<ApiKeySubjec
         this.targetConsumerIds = targetConsumerIds.stream().map(UUID::fromString).collect(Collectors.toList());
     }
 
-    public static ApiKeyCredentialProvider of(CredentialProviderSpec spec) {
+    static ApiKeyCredentialProvider of(CredentialProviderSpec spec) {
         return new ApiKeyCredentialProvider(
                 spec.getId(),
                 spec.getName(),
@@ -66,7 +66,7 @@ public class ApiKeyCredentialProvider implements CredentialProvider<ApiKeySubjec
         }
     }
 
-    static class ApiKeyCredentialProvideException extends RuntimeException {
+    private static class ApiKeyCredentialProvideException extends RuntimeException {
         ApiKeyCredentialProvideException(Throwable cause) {
             super(cause);
         }

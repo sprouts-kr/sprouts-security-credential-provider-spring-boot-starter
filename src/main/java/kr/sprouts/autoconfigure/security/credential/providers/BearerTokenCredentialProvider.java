@@ -37,7 +37,7 @@ public class BearerTokenCredentialProvider implements CredentialProvider<BearerT
         this.targetConsumerIds = targetConsumerIds.stream().map(UUID::fromString).collect(Collectors.toList());
     }
 
-    public static BearerTokenCredentialProvider of(CredentialProviderSpec spec) {
+    static BearerTokenCredentialProvider of(CredentialProviderSpec spec) {
         return new BearerTokenCredentialProvider(
                 spec.getId(),
                 spec.getName(),
@@ -85,7 +85,7 @@ public class BearerTokenCredentialProvider implements CredentialProvider<BearerT
         return claims;
     }
 
-    static class BearerTokenCredentialProvideException extends RuntimeException {
+    private static class BearerTokenCredentialProvideException extends RuntimeException {
         BearerTokenCredentialProvideException(Throwable cause) {
             super(cause);
         }
