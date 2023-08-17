@@ -7,6 +7,7 @@ import kr.sprouts.autoconfigure.security.credential.providers.BearerTokenCredent
 import kr.sprouts.autoconfigure.security.credential.providers.BearerTokenSubject;
 import kr.sprouts.autoconfigure.security.credential.providers.CredentialProviderManager;
 import kr.sprouts.security.credential.Credential;
+import kr.sprouts.security.credential.CredentialHeaderSpec;
 import kr.sprouts.security.credential.CredentialProvider;
 import kr.sprouts.security.credential.CredentialProviderSpec;
 import org.junit.jupiter.api.Test;
@@ -28,6 +29,10 @@ class CredentialProviderConfigurationTest {
     @Test
     void configuration() {
         String[] properties = {
+                "sprouts.security.credential.header.provider-header-name=Authorization-Provider",
+                "sprouts.security.credential.header.consumer-header-name=Authorization-Consumer",
+                "sprouts.security.credential.header.value-header-name=Authorization",
+
                 "sprouts.security.credential.providers[0].id=98c73526-7b15-4e0c-aacd-a47816efaedc",
                 "sprouts.security.credential.providers[0].name=Provider #1",
                 "sprouts.security.credential.providers[0].type=API_KEY",
@@ -49,6 +54,10 @@ class CredentialProviderConfigurationTest {
     @Test
     void property() {
         String[] properties = {
+                "sprouts.security.credential.header.provider-header-name=Authorization-Provider",
+                "sprouts.security.credential.header.consumer-header-name=Authorization-Consumer",
+                "sprouts.security.credential.header.value-header-name=Authorization",
+
                 "sprouts.security.credential.providers[0].id=98c73526-7b15-4e0c-aacd-a47816efaedc",
                 "sprouts.security.credential.providers[0].name=Provider #1",
                 "sprouts.security.credential.providers[0].type=API_KEY",
@@ -71,6 +80,12 @@ class CredentialProviderConfigurationTest {
                             .orElseThrow();
 
                     assertEquals("98c73526-7b15-4e0c-aacd-a47816efaedc", providerSpec.getId());
+
+                    CredentialHeaderSpec headerSpec = context.getBean(CredentialProviderConfiguration.class)
+                            .getCredentialProviderConfigurationProperty()
+                            .getHeader();
+
+                    assertEquals("Authorization-Provider", headerSpec.getProviderHeaderName());
                 }
         );
     }
@@ -78,6 +93,10 @@ class CredentialProviderConfigurationTest {
     @Test
     void provide() {
         String[] properties = {
+                "sprouts.security.credential.header.provider-header-name=Authorization-Provider",
+                "sprouts.security.credential.header.consumer-header-name=Authorization-Consumer",
+                "sprouts.security.credential.header.value-header-name=Authorization",
+
                 "sprouts.security.credential.providers[0].id=98c73526-7b15-4e0c-aacd-a47816efaedc",
                 "sprouts.security.credential.providers[0].name=Provider #1",
                 "sprouts.security.credential.providers[0].type=API_KEY",
