@@ -13,8 +13,8 @@
 	<version>0.0.2-SNAPSHOT</version>
 	<name>sprouts-security-credential-provider-spring-boot-starter</name>
 	<properties>
-		<java.version>11</java.version>
 		<sonar.qualitygate.wait>true</sonar.qualitygate.wait>
+		<java.version>11</java.version>
 	</properties>
 	<repositories>
 		<!-- personal repository -->
