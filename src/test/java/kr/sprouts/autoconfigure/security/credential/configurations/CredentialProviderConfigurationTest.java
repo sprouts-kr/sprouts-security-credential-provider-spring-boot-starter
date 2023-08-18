@@ -10,19 +10,18 @@ import kr.sprouts.security.credential.Credential;
 import kr.sprouts.security.credential.CredentialHeaderSpec;
 import kr.sprouts.security.credential.CredentialProvider;
 import kr.sprouts.security.credential.CredentialProviderSpec;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 
 import java.util.UUID;
-import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@Slf4j
 class CredentialProviderConfigurationTest {
-    Logger log = Logger.getLogger(this.getClass().getSimpleName());
-
     private final ApplicationContextRunner applicationContextRunner = new ApplicationContextRunner()
             .withConfiguration(AutoConfigurations.of(CredentialProviderConfiguration.class));
 
