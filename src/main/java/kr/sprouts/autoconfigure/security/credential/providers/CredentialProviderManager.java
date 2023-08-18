@@ -3,6 +3,7 @@ package kr.sprouts.autoconfigure.security.credential.providers;
 import kr.sprouts.autoconfigure.security.credential.properties.CredentialProviderConfigurationProperty;
 import kr.sprouts.security.credential.CredentialProvider;
 import kr.sprouts.security.credential.CredentialProviderSpec;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,12 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @Component
+@Slf4j
 public class CredentialProviderManager {
-    Logger log = Logger.getLogger(this.getClass().getSimpleName());
     private final Map<UUID, CredentialProvider<?>> credentialProviders;
 
     @Autowired
@@ -40,9 +39,7 @@ public class CredentialProviderManager {
                     throw new UnsupportedCredentialProviderException();
             }
 
-            if (log.isLoggable(Level.INFO)) {
-                log.info(String.format("Initialized credential provider. Id: %s, Name: %s", credentialProviderSpec.getId(), credentialProviderSpec.getName()));
-            }
+            if (log.isInfoEnabled()) log.info("Initialized credential provider. Id: {}, Name: {}", credentialProviderSpec.getId(), credentialProviderSpec.getName());
         }
     }
 
