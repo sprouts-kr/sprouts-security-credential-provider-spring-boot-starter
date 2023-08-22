@@ -1,17 +1,17 @@
-package kr.sprouts.autoconfigure.security.credential.providers;
+package kr.sprouts.framework.autoconfigure.security.credential.provider.components;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import kr.sprouts.security.credential.Credential;
-import kr.sprouts.security.credential.CredentialProvider;
-import kr.sprouts.security.credential.CredentialProviderSpec;
-import kr.sprouts.security.credential.Principal;
-import kr.sprouts.security.credential.codec.Codec;
-import kr.sprouts.security.credential.codec.CodecType;
-import kr.sprouts.security.credential.jwt.Jwt;
-import kr.sprouts.security.credential.jwt.JwtAlgorithm;
+import kr.sprouts.framework.library.security.credential.Credential;
+import kr.sprouts.framework.library.security.credential.CredentialProvider;
+import kr.sprouts.framework.library.security.credential.CredentialProviderSpec;
+import kr.sprouts.framework.library.security.credential.Principal;
+import kr.sprouts.framework.library.security.credential.codec.Codec;
+import kr.sprouts.framework.library.security.credential.codec.CodecType;
+import kr.sprouts.framework.library.security.credential.jwt.Jwt;
+import kr.sprouts.framework.library.security.credential.jwt.JwtAlgorithm;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

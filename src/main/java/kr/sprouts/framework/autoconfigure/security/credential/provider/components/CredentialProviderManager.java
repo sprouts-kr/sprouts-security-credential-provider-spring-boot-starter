@@ -1,8 +1,8 @@
-package kr.sprouts.autoconfigure.security.credential.providers;
+package kr.sprouts.framework.autoconfigure.security.credential.provider.components;
 
-import kr.sprouts.autoconfigure.security.credential.properties.CredentialProviderConfigurationProperty;
-import kr.sprouts.security.credential.CredentialProvider;
-import kr.sprouts.security.credential.CredentialProviderSpec;
+import kr.sprouts.framework.autoconfigure.security.credential.provider.properties.CredentialProviderConfigurationProperty;
+import kr.sprouts.framework.library.security.credential.CredentialProvider;
+import kr.sprouts.framework.library.security.credential.CredentialProviderSpec;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

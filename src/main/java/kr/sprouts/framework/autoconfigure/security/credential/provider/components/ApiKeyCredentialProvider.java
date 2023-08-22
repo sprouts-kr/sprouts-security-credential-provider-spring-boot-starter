@@ -1,15 +1,15 @@
-package kr.sprouts.autoconfigure.security.credential.providers;
+package kr.sprouts.framework.autoconfigure.security.credential.provider.components;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import kr.sprouts.security.credential.Credential;
-import kr.sprouts.security.credential.CredentialProvider;
-import kr.sprouts.security.credential.CredentialProviderSpec;
-import kr.sprouts.security.credential.Principal;
-import kr.sprouts.security.credential.cipher.Cipher;
-import kr.sprouts.security.credential.cipher.CipherAlgorithm;
-import kr.sprouts.security.credential.codec.Codec;
-import kr.sprouts.security.credential.codec.CodecType;
+import kr.sprouts.framework.library.security.credential.Credential;
+import kr.sprouts.framework.library.security.credential.CredentialProvider;
+import kr.sprouts.framework.library.security.credential.CredentialProviderSpec;
+import kr.sprouts.framework.library.security.credential.Principal;
+import kr.sprouts.framework.library.security.credential.cipher.Cipher;
+import kr.sprouts.framework.library.security.credential.cipher.CipherAlgorithm;
+import kr.sprouts.framework.library.security.credential.codec.Codec;
+import kr.sprouts.framework.library.security.credential.codec.CodecType;
 
 import java.util.List;
 import java.util.UUID;
