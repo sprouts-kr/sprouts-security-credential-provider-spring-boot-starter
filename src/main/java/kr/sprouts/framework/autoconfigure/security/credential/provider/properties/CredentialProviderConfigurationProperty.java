@@ -1,4 +1,4 @@
-package kr.sprouts.autoconfigure.security.credential.properties;
+package kr.sprouts.framework.autoconfigure.security.credential.provider.properties;
 
 import kr.sprouts.security.credential.CredentialHeaderSpec;
 import kr.sprouts.security.credential.CredentialProviderSpec;

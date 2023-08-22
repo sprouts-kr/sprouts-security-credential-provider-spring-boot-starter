@@ -1,6 +1,6 @@
-package kr.sprouts.autoconfigure.security.credential.components;
+package kr.sprouts.framework.autoconfigure.security.credential.provider.components;
 
-import kr.sprouts.autoconfigure.security.credential.properties.CredentialProviderConfigurationProperty;
+import kr.sprouts.framework.autoconfigure.security.credential.provider.properties.CredentialProviderConfigurationProperty;
 import kr.sprouts.security.credential.CredentialProvider;
 import kr.sprouts.security.credential.CredentialProviderSpec;
 import lombok.extern.slf4j.Slf4j;
