@@ -1,11 +1,11 @@
 package kr.sprouts.autoconfigure.security.credential.configurations;
 
 import kr.sprouts.autoconfigure.security.credential.properties.CredentialProviderConfigurationProperty;
-import kr.sprouts.autoconfigure.security.credential.providers.ApiKeyCredentialProvider;
-import kr.sprouts.autoconfigure.security.credential.providers.ApiKeySubject;
-import kr.sprouts.autoconfigure.security.credential.providers.BearerTokenCredentialProvider;
-import kr.sprouts.autoconfigure.security.credential.providers.BearerTokenSubject;
-import kr.sprouts.autoconfigure.security.credential.providers.CredentialProviderManager;
+import kr.sprouts.autoconfigure.security.credential.components.ApiKeyCredentialProvider;
+import kr.sprouts.autoconfigure.security.credential.components.ApiKeySubject;
+import kr.sprouts.autoconfigure.security.credential.components.BearerTokenCredentialProvider;
+import kr.sprouts.autoconfigure.security.credential.components.BearerTokenSubject;
+import kr.sprouts.autoconfigure.security.credential.components.CredentialProviderManager;
 import kr.sprouts.security.credential.Credential;
 import kr.sprouts.security.credential.CredentialHeaderSpec;
 import kr.sprouts.security.credential.CredentialProvider;

@@ -1,4 +1,4 @@
-package kr.sprouts.autoconfigure.security.credential.providers;
+package kr.sprouts.autoconfigure.security.credential.components;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

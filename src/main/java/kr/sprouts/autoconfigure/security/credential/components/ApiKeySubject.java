@@ -1,4 +1,4 @@
-package kr.sprouts.autoconfigure.security.credential.providers;
+package kr.sprouts.autoconfigure.security.credential.components;
 
 import kr.sprouts.security.credential.Subject;
 import lombok.AccessLevel;
