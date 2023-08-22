@@ -1,15 +1,15 @@
 package kr.sprouts.framework.autoconfigure.security.credential.provider.configurations;
 
-import kr.sprouts.framework.autoconfigure.security.credential.provider.properties.CredentialProviderConfigurationProperty;
 import kr.sprouts.framework.autoconfigure.security.credential.provider.components.ApiKeyCredentialProvider;
 import kr.sprouts.framework.autoconfigure.security.credential.provider.components.ApiKeySubject;
 import kr.sprouts.framework.autoconfigure.security.credential.provider.components.BearerTokenCredentialProvider;
 import kr.sprouts.framework.autoconfigure.security.credential.provider.components.BearerTokenSubject;
 import kr.sprouts.framework.autoconfigure.security.credential.provider.components.CredentialProviderManager;
-import kr.sprouts.security.credential.Credential;
-import kr.sprouts.security.credential.CredentialHeaderSpec;
-import kr.sprouts.security.credential.CredentialProvider;
-import kr.sprouts.security.credential.CredentialProviderSpec;
+import kr.sprouts.framework.autoconfigure.security.credential.provider.properties.CredentialProviderConfigurationProperty;
+import kr.sprouts.framework.library.security.credential.Credential;
+import kr.sprouts.framework.library.security.credential.CredentialHeaderSpec;
+import kr.sprouts.framework.library.security.credential.CredentialProvider;
+import kr.sprouts.framework.library.security.credential.CredentialProviderSpec;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;

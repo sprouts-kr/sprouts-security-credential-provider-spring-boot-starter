@@ -1,7 +1,7 @@
 package kr.sprouts.framework.autoconfigure.security.credential.provider.properties;
 
-import kr.sprouts.security.credential.CredentialHeaderSpec;
-import kr.sprouts.security.credential.CredentialProviderSpec;
+import kr.sprouts.framework.library.security.credential.CredentialHeaderSpec;
+import kr.sprouts.framework.library.security.credential.CredentialProviderSpec;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
