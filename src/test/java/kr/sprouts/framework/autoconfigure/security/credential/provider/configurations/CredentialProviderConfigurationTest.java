@@ -28,9 +28,9 @@ class CredentialProviderConfigurationTest {
     @Test
     void configuration() {
         String[] properties = {
-                "sprouts.security.credential.header.provider-header-name=Authorization-Provider",
-                "sprouts.security.credential.header.consumer-header-name=Authorization-Consumer",
-                "sprouts.security.credential.header.value-header-name=Authorization",
+                "sprouts.security.credential.header.name=Authorization",
+                "sprouts.security.credential.header.prefix=Bearer",
+                "sprouts.security.credential.header.codec=BASE64_URL",
 
                 "sprouts.security.credential.providers[0].id=98c73526-7b15-4e0c-aacd-a47816efaedc",
                 "sprouts.security.credential.providers[0].name=Provider #1",
@@ -53,9 +53,9 @@ class CredentialProviderConfigurationTest {
     @Test
     void property() {
         String[] properties = {
-                "sprouts.security.credential.header.provider-header-name=Authorization-Provider",
-                "sprouts.security.credential.header.consumer-header-name=Authorization-Consumer",
-                "sprouts.security.credential.header.value-header-name=Authorization",
+                "sprouts.security.credential.header.name=Authorization",
+                "sprouts.security.credential.header.prefix=Bearer",
+                "sprouts.security.credential.header.codec=BASE64_URL",
 
                 "sprouts.security.credential.providers[0].id=98c73526-7b15-4e0c-aacd-a47816efaedc",
                 "sprouts.security.credential.providers[0].name=Provider #1",
@@ -84,7 +84,7 @@ class CredentialProviderConfigurationTest {
                             .getCredentialProviderConfigurationProperty()
                             .getHeader();
 
-                    assertEquals("Authorization-Provider", headerSpec.getProviderHeaderName());
+                    assertEquals("Authorization", headerSpec.getName());
                 }
         );
     }
@@ -92,9 +92,9 @@ class CredentialProviderConfigurationTest {
     @Test
     void provide() {
         String[] properties = {
-                "sprouts.security.credential.header.provider-header-name=Authorization-Provider",
-                "sprouts.security.credential.header.consumer-header-name=Authorization-Consumer",
-                "sprouts.security.credential.header.value-header-name=Authorization",
+                "sprouts.security.credential.header.name=Authorization",
+                "sprouts.security.credential.header.prefix=Bearer",
+                "sprouts.security.credential.header.codec=BASE64_URL",
 
                 "sprouts.security.credential.providers[0].id=98c73526-7b15-4e0c-aacd-a47816efaedc",
                 "sprouts.security.credential.providers[0].name=Provider #1",
