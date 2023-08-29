@@ -43,11 +43,11 @@ public class CredentialProviderManager {
         }
     }
 
-    public Optional<Collection<CredentialProvider<?>>> getValues() {
-        return Optional.of(credentialProviders.values());
+    public Collection<CredentialProvider<?>> getProviders() {
+        return credentialProviders.values();
     }
 
-    public Optional<CredentialProvider<?>> get(UUID providerId) {
-         return Optional.of(credentialProviders.get(providerId));
+    public Optional<CredentialProvider<?>> getProvider(UUID providerId) {
+         return Optional.ofNullable(credentialProviders.get(providerId));
     }
 }
