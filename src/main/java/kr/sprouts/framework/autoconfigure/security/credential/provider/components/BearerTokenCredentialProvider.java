@@ -1,7 +1,6 @@
 package kr.sprouts.framework.autoconfigure.security.credential.provider.components;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import kr.sprouts.framework.library.security.credential.Credential;
@@ -20,7 +19,6 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class BearerTokenCredentialProvider implements CredentialProvider<BearerTokenSubject> {
-    private final ObjectMapper objectMapper = new ObjectMapper();
     private final UUID id;
     private final String name;
     private final Codec codec;
@@ -74,14 +72,13 @@ public class BearerTokenCredentialProvider implements CredentialProvider<BearerT
     private Claims claims(Principal<BearerTokenSubject> principal) throws JsonProcessingException {
         LocalDateTime currentDateTime = LocalDateTime.now();
 
-        Claims claims = Jwts.claims();
-        claims.setIssuer(principal.getProviderId().toString());
-        claims.setSubject(principal.getSubject().getMemberId().toString());
-        claims.setAudience(objectMapper.writeValueAsString(principal.getTargetConsumers()));
-        claims.setIssuedAt(Timestamp.valueOf(currentDateTime));
-        claims.setNotBefore(Timestamp.valueOf(currentDateTime.minusSeconds(60)));
-        claims.setExpiration(Timestamp.valueOf(currentDateTime.plusMinutes(principal.getSubject().getValidityInMinutes())));
-
-        return claims;
+        return Jwts.claims()
+                .issuer(principal.getProviderId().toString())
+                .subject(principal.getSubject().getMemberId().toString())
+                .audience().add(principal.getTargetConsumers().stream().map(UUID::toString).collect(Collectors.toList())).and()
+                .issuedAt(Timestamp.valueOf(currentDateTime))
+                .notBefore(Timestamp.valueOf(currentDateTime))
+                .expiration(Timestamp.valueOf(currentDateTime.plusMinutes(principal.getSubject().getValidityInMinutes())))
+                .build();
     }
 }

@@ -14,7 +14,7 @@
   <properties>
     <java.version>17</java.version>
     <!-- dependency -->
-    <sprouts.security.credential.version>0.0.9</sprouts.security.credential.version>
+    <sprouts.security.credential.version>0.1.0-SNAPSHOT</sprouts.security.credential.version>
   </properties>
   <repositories>
     <!-- personal-repository -->
