@@ -16,7 +16,6 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class BearerTokenCredentialProvider implements CredentialProvider<BearerTokenSubject> {
     private final UUID id;
@@ -32,7 +31,7 @@ public class BearerTokenCredentialProvider implements CredentialProvider<BearerT
         this.codec = CodecType.fromName(codec).getCodecSupplier().get();
         this.jwt = JwtAlgorithm.fromName(algorithm).getJwtSupplier().get();
         this.encryptSecret = this.codec.decode(encodedEncryptSecret);
-        this.targetConsumerIds = targetConsumerIds.stream().map(UUID::fromString).collect(Collectors.toList());
+        this.targetConsumerIds = targetConsumerIds.stream().map(UUID::fromString).toList();
     }
 
     static BearerTokenCredentialProvider of(CredentialProviderSpec spec) {
@@ -42,7 +41,7 @@ public class BearerTokenCredentialProvider implements CredentialProvider<BearerT
                 spec.getCodec(),
                 spec.getAlgorithm(),
                 spec.getEncodedSecret(),
-                spec.getTargetConsumers().stream().map(CredentialProviderSpec.TargetConsumer::getId).collect(Collectors.toList())
+                spec.getTargetConsumers().stream().map(CredentialProviderSpec.TargetConsumer::getId).toList()
         );
     }
 
@@ -75,7 +74,7 @@ public class BearerTokenCredentialProvider implements CredentialProvider<BearerT
         return Jwts.claims()
                 .issuer(principal.getProviderId().toString())
                 .subject(principal.getSubject().getMemberId().toString())
-                .audience().add(principal.getTargetConsumers().stream().map(UUID::toString).collect(Collectors.toList())).and()
+                .audience().add(principal.getTargetConsumers().stream().map(UUID::toString).toList()).and()
                 .issuedAt(Timestamp.valueOf(currentDateTime))
                 .notBefore(Timestamp.valueOf(currentDateTime))
                 .expiration(Timestamp.valueOf(currentDateTime.plusMinutes(principal.getSubject().getValidityInMinutes())))
