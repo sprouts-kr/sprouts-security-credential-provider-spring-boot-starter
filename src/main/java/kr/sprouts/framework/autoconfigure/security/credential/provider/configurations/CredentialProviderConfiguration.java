@@ -4,11 +4,11 @@ import kr.sprouts.framework.autoconfigure.security.credential.provider.component
 import kr.sprouts.framework.autoconfigure.security.credential.provider.properties.CredentialProviderConfigurationProperty;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@AutoConfiguration
 @ComponentScan(basePackageClasses = { CredentialProviderManager.class })
 @EnableConfigurationProperties(value = { CredentialProviderConfigurationProperty.class })
 @Slf4j
